@@ -21,10 +21,10 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2 text-sm">
             {[
-              { href: "/", label: "Inicio" },
-              { href: "/areas", label: "Áreas de práctica" },
-              { href: "/equipo", label: "Equipo" },
-              { href: "/consultas", label: "Consultas" },
+              { href: "#inicio", label: "Inicio" },
+              { href: "#areas", label: "Áreas de práctica" },
+              { href: "#equipo", label: "Equipo" },
+              { href: "#consultas", label: "Preguntas" },
               { href: "#contacto", label: "Contacto" },
             ].map((link) => (
               <li key={link.href}>

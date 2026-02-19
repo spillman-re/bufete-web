@@ -9,7 +9,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <section id="hero">
+        <Hero />
+      </section>
 
       <section id="areas">
         <Areas />

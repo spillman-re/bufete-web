@@ -1,43 +1,75 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="container py-24 pt-32">
-      <div className="relative bg-[var(--primary)] text-white rounded-xl px-10 py-20 overflow-hidden">
-        {/* detalle decorativo */}
-        <span className="absolute top-0 left-0 h-full w-1 bg-[var(--accent)]" />
+    <section
+      id="inicio"
+      className="relative min-h-screen flex items-center text-white overflow-hidden"
+    >
+      {/* Imagen de fondo */}
+      <div
+        className="
+          absolute inset-0
+          bg-[url('https://cxvmjzdfklewbclnndjq.supabase.co/storage/v1/object/public/images/photo-1431540015161-0bf868a2d407.avif')]
+          bg-cover
+          bg-center
+          scale-105
+        "
+      />
 
-        <p className="text-sm uppercase tracking-widest text-[var(--accent)] mb-4">
-          Bufete jurídico integral
-        </p>
+      {/* Overlay */}
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-b
+          from-[var(--primary)]/90
+          via-[var(--primary)]/75
+          to-[var(--primary)]/90
+        "
+      />
 
-        <h1 className="font-serif text-4xl md:text-5xl leading-tight max-w-3xl">
-          Soluciones legales sólidas,
-          <br />
-          claras y confiables
-        </h1>
+      {/* Detalle lateral (solo visible en desktop para evitar ruido en móvil) */}
+      <span className="hidden md:block absolute left-0 top-0 h-full w-1 bg-[var(--accent)]" />
 
-        <p className="mt-6 text-lg text-slate-200 max-w-2xl">
-          Asesoramos y representamos a personas y empresas en distintas áreas
-          del derecho, con un enfoque profesional, cercano y responsable.
-        </p>
+      {/* Contenido */}
+      <div
+        className="
+          relative z-10
+          container mx-auto px-6
+          pt-20 md:pt-0
+        "
+      >
+        <div className="max-w-3xl">
+          <p className="text-[10px] md:text-sm uppercase tracking-[0.2em] text-[var(--accent)] mb-4 font-semibold">
+            Bufete jurídico integral
+          </p>
 
-        <div className="mt-10 flex items-center gap-6">
-          <Link
-            href="#contacto"
-            className="bg-[var(--accent)] text-black px-6 py-3 rounded font-medium hover:opacity-90 transition"
-          >
-            Solicitar consulta
-          </Link>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl leading-[1.1] mb-6">
+            Soluciones legales sólidas,
+            <br className="hidden sm:block" />
+            <span className="text-slate-100"> claras y confiables</span>
+          </h1>
 
-          <Link
-            href="#areas"
-            className="text-sm font-medium text-white underline underline-offset-4 hover:text-[var(--accent)] transition"
-          >
-            Ver áreas de práctica
-          </Link>
+          <p className="text-sm md:text-lg text-slate-300 max-w-xl mb-10 leading-relaxed">
+            Asesoramos y representamos a personas y empresas con el más alto estándar de profesionalismo y responsabilidad ética.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="#contacto"
+              className="bg-[var(--accent)] text-black px-8 py-4 rounded font-bold text-center hover:scale-105 transition-transform"
+            >
+              Solicitar consulta
+            </Link>
+            <Link
+              href="#areas"
+              className="border border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded font-medium text-center hover:bg-white/10 transition-all"
+            >
+              Nuestros servicios
+            </Link>
+          </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
